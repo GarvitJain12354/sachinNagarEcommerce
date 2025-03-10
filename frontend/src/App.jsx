@@ -28,7 +28,7 @@ const App = () => {
           <Route path='/success' element={<Success />} />
           <Route path='/cancel' element={<CancelPage />} />
           <Route path='/register' element={<RegisterScreen setCookies={setCookies} />} />
-          <Route path="/login" element={!authToken? <Login /> : <Navigate to="/home" />} />
+          <Route path="/login" element={!authToken? <Login setCookies={setCookies} /> : <Navigate to="/home" />} />
           
         </Routes>
       </CartContextProvider>

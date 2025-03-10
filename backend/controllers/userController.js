@@ -38,6 +38,7 @@ export const userController = {
       
         try {
           const user = await User.findOne({ email });
+          
           if (!user || !(await user.comparePassword(password))) {
             return res.status(400).send({ error: 'Invalid login credentials' });
           }

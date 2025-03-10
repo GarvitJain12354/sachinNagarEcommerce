@@ -11,8 +11,8 @@ const Login = ({ setCookies }) => {
 
   const handleLogin = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/login", {
-        username,
+      const res = await axios.post("http://localhost:5000/user/login", {
+        email:username,
         password,
       });
 
@@ -33,10 +33,10 @@ const Login = ({ setCookies }) => {
 
         {/* Username Field */}
         <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">Username</label>
+          <label className="block text-sm font-medium text-gray-700">Email</label>
           <input
-            type="text"
-            placeholder="Enter your username"
+            type="email"
+            placeholder="Enter your email"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             className="mt-1 p-2 w-full border rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none"
